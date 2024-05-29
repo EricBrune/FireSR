@@ -133,44 +133,93 @@
   </section>
   <!-- End paper abstract -->
 
-  <!-- Image carousel -->
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item">
-            <!-- Your image here -->
-            <img src="static/images/carousel1.jpg" alt="Super-resolved image example 1"/>
-            <h2 class="subtitle has-text-centered">
-              Super-resolved image example 1.
-            </h2>
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="static/images/carousel2.jpg" alt="Super-resolved image example 2"/>
-            <h2 class="subtitle has-text-centered">
-              Super-resolved image example 2.
-            </h2>
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="static/images/carousel3.jpg" alt="Super-resolved image example 3"/>
-            <h2 class="subtitle has-text-centered">
-              Super-resolved image example 3.
-            </h2>
-          </div>
-          <div class="item">
-            <!-- Your image here -->
-            <img src="static/images/carousel4.jpg" alt="Super-resolved image example 4"/>
-            <h2 class="subtitle has-text-centered">
-              Super-resolved image example 4.
-            </h2>
-          </div>
-        </div>
+  <main>
+    <div class="container">
+      <div class="image-container">
+        <img
+          class="image-before slider-image"
+          src="static/images/modis_1.png"
+          alt="MODIS image"
+        />
+        <img
+          class="image-after slider-image"
+          src="static/images/s2_1.png"
+          alt="Sentinel-2 image"
+        />
+      </div>
+      <!-- step="10" -->
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value="50"
+        aria-label="Percentage of before photo shown"
+        class="slider"
+      />
+      <div class="slider-line" aria-hidden="true"></div>
+      <div class="slider-button" aria-hidden="true">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          fill="currentColor"
+          viewBox="0 0 256 256"
+        >
+          <rect width="256" height="256" fill="none"></rect>
+          <line
+            x1="128"
+            y1="40"
+            x2="128"
+            y2="216"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></line>
+          <line
+            x1="96"
+            y1="128"
+            x2="16"
+            y2="128"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></line>
+          <polyline
+            points="48 160 16 128 48 96"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></polyline>
+          <line
+            x1="160"
+            y1="128"
+            x2="240"
+            y2="128"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></line>
+          <polyline
+            points="208 96 240 128 208 160"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></polyline>
+        </svg>
       </div>
     </div>
-  </section>
-  <!-- End image carousel -->
+  </main>
+  
 
   <footer class="footer">
     <div class="container">
