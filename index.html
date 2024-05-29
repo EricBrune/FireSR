@@ -133,94 +133,24 @@
   </section>
   <!-- End paper abstract -->
 
-  <!-- Before/After Image Slider -->
-  <main>
-    <div class="container">
-      <div class="image-container">
-        <img
-          class="image-before slider-image"
-          src="static/images/modis_1.png"
-          alt="MODIS image"
-        />
-        <img
-          class="image-after slider-image"
-          src="static/images/s2_1.png"
-          alt="Sentinel-2 image"
-        />
-      </div>
-      <!-- step="10" -->
-      <input
-        type="range"
-        min="0"
-        max="100"
-        value="50"
-        aria-label="Percentage of before photo shown"
-        class="slider"
-      />
-      <div class="slider-line" aria-hidden="true"></div>
-      <div class="slider-button" aria-hidden="true">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="30"
-          height="30"
-          fill="currentColor"
-          viewBox="0 0 256 256"
-        >
-          <rect width="256" height="256" fill="none"></rect>
-          <line
-            x1="128"
-            y1="40"
-            x2="128"
-            y2="216"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="16"
-          ></line>
-          <line
-            x1="96"
-            y1="128"
-            x2="16"
-            y2="128"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="16"
-          ></line>
-          <polyline
-            points="48 160 16 128 48 96"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="16"
-          ></polyline>
-          <line
-            x1="160"
-            y1="128"
-            x2="240"
-            y2="128"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="16"
-          ></line>
-          <polyline
-            points="208 96 240 128 208 160"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="16"
-          ></polyline>
-        </svg>
+  <!-- Image Slider Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths has-text-centered">
+          <h2 class="title is-3">Image Comparison Slider</h2>
+          <div class="slider">
+            <div class="slider-track">
+              <img src="static/images/modis_1.png" alt="MODIS Image" style="position: absolute; width: 100%; height: auto; z-index: 1;">
+              <img src="static/images/s2_1.png" alt="Sentinel-2 Image" style="position: absolute; width: 100%; height: auto; clip: rect(0, 50%, 100%, 0); z-index: 2;">
+              <input type="range" min="0" max="100" value="50" class="slider-input">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </main>
-  <!-- End Before/After Image Slider -->
+  </section>
+  <!-- End Image Slider Section -->
 
   <footer class="footer">
     <div class="container">
@@ -240,5 +170,17 @@
   <!-- Statcounter tracking code -->
   <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
   <!-- End of Statcounter Code -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sliderInput = document.querySelector('.slider-input');
+      const s2Image = document.querySelector('.slider-track img:nth-child(2)');
+
+      sliderInput.addEventListener('input', (event) => {
+        const value = event.target.value;
+        s2Image.style.clip = `rect(0, ${value}%, 100%, 0)`;
+      });
+    });
+  </script>
 </body>
 </html>
