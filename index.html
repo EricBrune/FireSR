@@ -5,7 +5,7 @@
   <!-- Meta tags for social media banners, these should be filled in appropriately as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="FireSR: Super-Resolution and Segmentation of Burned Areas. A high-resolution wildfire monitoring dataset and model suite.">
-  <meta property="og:title" content="FireSR: Super-Resolution and Segmentation of Burned Areas"/>
+  <meta property="og:title" content="FireSR: A Dataset for Super-Resolution and Segmentation of Burned Areas"/>
   <meta property="og:description" content="A dataset and suite of models for high-resolution monitoring of wildfires using super-resolution and segmentation techniques."/>
   <meta property="og:url" content="https://yourwebsite.github.io"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X630-->
@@ -13,8 +13,8 @@
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
-  <meta name="twitter:title" content="FireSR: Super-Resolution and Segmentation of Burned Areas">
-  <meta name="twitter:description" content="A dataset and suite of models for high-resolution monitoring of wildfires using super-resolution and segmentation techniques.">
+  <meta name="twitter:title" content="FireSR: A Dataset for Super-Resolution and Segmentation of Burned Areas">
+  <meta name="twitter:description" content="A dataset and suite of models for high-resolution monitoring of wildfires using super-resolution and segmentation.">
   <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X600-->
   <meta name="twitter:image" content="static/images/banner.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -32,7 +32,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   <link rel="stylesheet" href="static/css/ba-slider.css">
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -110,7 +109,7 @@
       <div class="hero-body">
         <img src="static/images/banner.png" alt="FireSR Banner Image" />
         <h2 class="subtitle has-text-centered">
-          Introducing FireSR: A high-resolution wildfire monitoring solution through super-resolution and segmentation.
+          Wildfire events in Canada ranging from 2017 to 2023 with a burned area larger than 2000 HA. 
         </h2>
       </div>
     </div>
@@ -125,7 +124,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              The increasing frequency and severity of wildfires due to climate change necessitate high-resolution daily monitoring. While MODIS provides daily global coverage at a coarse resolution of 500 meters in its short-wave infrared band, Sentinel-2 offers higher resolution at 20 meters but with a five-day revisit time. This trade-off between temporal and spatial resolution presents a gap in the ability to monitor wildfires daily with sufficient spatial detail. To address this challenge, we introduce FireSR, a dataset comprising all wildfire events in Canada from 2017 to 2022 larger than 2000 hectares. The dataset includes pre- and post-fire Sentinel-2 images, post-fire MODIS images, and National Burned Area Composite (NBAC) polygons. We demonstrate the effectiveness of FireSR through three models: a Conditional Denoising Diffusion Probabilistic Model (DDPM) for super-resolution, a U-Net for segmentation, and a multitask DDPM for simultaneous super-resolution and segmentation. Our experiments show that learning both tasks enhances performance in each, enabling daily high-resolution wildfire monitoring. FireSR aims to advance methods aiding remote sensing-based decision-making and provides a valuable resource for effective wildfire management and response. The dataset is openly accessible at <a href="https://drive.google.com/drive/folders/YOUR_DATASET_LINK" target="_blank">this link</a>.
+              The increasing frequency and severity of wildfires due to climate change necessitate high-resolution daily monitoring. While MODIS provides daily global coverage at a coarse resolution of 500 meters in its short-wave infrared band, Sentinel-2 offers higher resolution at 20 meters but with a five-day revisit time. Addressing the gap between the need for high spatial and temporal resolution monitoring and the limitations of existing satellite data, we introduce FireSR, a dataset that includes all wildfire events in Canada from 2017 to 2023 larger than 2000 hectares. The dataset comprises pre- and post-fire Sentinel-2 images, post-fire MODIS images, and National Burned Area Composite (NBAC) polygons. We demonstrate the capability of FireSR through three models: a Conditional Denoising Diffusion Probabilistic Model (DDPM) for super-resolution (SR) of Sentinel-2 pre-fire and MODIS post-fire images, a U-Net for segmentation, and a multitask DDPM for simultaneous super-resolution and segmentation. Our experiments show that learning both tasks enhances performance in each, thus enabling daily high-resolution wildfire monitoring. The main objective of FireSR is to stimulate further research and innovation in achieving daily high-resolution wildfire monitoring, thereby supporting effective wildfire response and management. The dataset is openly accessible at <a href="https://drive.google.com/drive/folders/YOUR_DATASET_LINK" target="_blank">this link</a>.
             </p>
           </div>
         </div>
@@ -134,32 +133,22 @@
   </section>
   <!-- End paper abstract -->
 
-<!-- Image Slider Section -->
-<section class="section">
-  <main>
+  <section class="image-slider-section">
+    <h1 class="title is-3 has-text-centered">MODIS post-fire & Super-resolved DDPM output</h1>
     <div class="container">
-      <div class="image-container">
-        <img class="image-before slider-image" src="static/images/modis_1.png" alt="MODIS Image Before" />
-        <img class="image-after slider-image" src="static/images/s2_1.png" alt="Sentinel-2 Image After" />
-      </div>
-      <input type="range" min="0" max="100" value="50" aria-label="Percentage of before photo shown" class="slider" />
-      <div class="slider-line" aria-hidden="true"></div>
-      <div class="slider-button" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 256 256">
-          <rect width="256" height="256" fill="none"></rect>
-          <line x1="128" y1="40" x2="128" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
-          <line x1="96" y1="128" x2="16" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
-          <polyline points="48 160 16 128 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
-          <line x1="160" y1="128" x2="240" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
-          <polyline points="208 96 240 128 208 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
-        </svg>
+      <div id="before-after-slider">
+        <div id="after-image">
+          <img src="static/images/s2_1.png" alt="After Sentinel-2 Image"/>
+        </div>
+        <div id="before-image">
+          <img src="static/images/modis_1.png" alt="Before MODIS Image"/>
+        </div>
+        <div id="resizer"></div>
       </div>
     </div>
-  </main>
-</section>
-<!-- End Image Slider Section -->
-
-<script src="static/js/ba-slider.js"></script>
+  </section>
+  
+  
 
   <footer class="footer">
     <div class="container">
@@ -175,21 +164,7 @@
       </div>
     </div>
   </footer>
+  <script src="static/js/ba-slider.js"></script>
 
-  <!-- Statcounter tracking code -->
-  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-  <!-- End of Statcounter Code -->
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const sliderInput = document.querySelector('.slider-input');
-      const s2Image = document.querySelector('.slider-track img:nth-child(2)');
-
-      sliderInput.addEventListener('input', (event) => {
-        const value = event.target.value;
-        s2Image.style.clip = `rect(0, ${value}%, 100%, 0)`;
-      });
-    });
-  </script>
 </body>
 </html>
