@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/ba-slider.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -133,24 +134,32 @@
   </section>
   <!-- End paper abstract -->
 
-  <!-- Image Slider Section -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-four-fifths has-text-centered">
-          <h2 class="title is-3">Image Comparison Slider</h2>
-          <div class="slider">
-            <div class="slider-track">
-              <img src="static/images/modis_1.png" alt="MODIS Image" style="position: absolute; width: 100%; height: auto; z-index: 1;">
-              <img src="static/images/s2_1.png" alt="Sentinel-2 Image" style="position: absolute; width: 100%; height: auto; clip: rect(0, 50%, 100%, 0); z-index: 2;">
-              <input type="range" min="0" max="100" value="50" class="slider-input">
-            </div>
-          </div>
-        </div>
+<!-- Image Slider Section -->
+<section class="section">
+  <main>
+    <div class="container">
+      <div class="image-container">
+        <img class="image-before slider-image" src="static/images/modis_1.png" alt="MODIS Image Before" />
+        <img class="image-after slider-image" src="static/images/s2_1.png" alt="Sentinel-2 Image After" />
+      </div>
+      <input type="range" min="0" max="100" value="50" aria-label="Percentage of before photo shown" class="slider" />
+      <div class="slider-line" aria-hidden="true"></div>
+      <div class="slider-button" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none"></rect>
+          <line x1="128" y1="40" x2="128" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+          <line x1="96" y1="128" x2="16" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+          <polyline points="48 160 16 128 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+          <line x1="160" y1="128" x2="240" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+          <polyline points="208 96 240 128 208 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+        </svg>
       </div>
     </div>
-  </section>
-  <!-- End Image Slider Section -->
+  </main>
+</section>
+<!-- End Image Slider Section -->
+
+<script src="static/js/ba-slider.js"></script>
 
   <footer class="footer">
     <div class="container">
