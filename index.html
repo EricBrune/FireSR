@@ -79,7 +79,7 @@
                 </span>
                 <!-- Github link -->
                 <span class="link-block">
-                  <a href="https://github.com/YOUR_REPO_LINK" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://github.com/EricBrune/FireSR_Models" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
@@ -88,7 +88,7 @@
                 </span>
                 <!-- Dataset Link -->
                 <span class="link-block">
-                  <a href="https://drive.google.com/drive/folders/YOUR_DATASET_LINK" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://zenodo.org/doi/10.5281/zenodo.11383985" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-database"></i>
                     </span>
@@ -124,7 +124,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              The increasing frequency and severity of wildfires due to climate change necessitate high-resolution daily monitoring. While MODIS provides daily global coverage at a coarse resolution of 500 meters in its short-wave infrared band, Sentinel-2 offers higher resolution at 20 meters but with a five-day revisit time. Addressing the gap between the need for high spatial and temporal resolution monitoring and the limitations of existing satellite data, we introduce FireSR, a dataset that includes all wildfire events in Canada from 2017 to 2023 larger than 2000 hectares. The dataset comprises pre- and post-fire Sentinel-2 images, post-fire MODIS images, and National Burned Area Composite (NBAC) polygons. We demonstrate the capability of FireSR through three models: a Conditional Denoising Diffusion Probabilistic Model (DDPM) for super-resolution (SR) of Sentinel-2 pre-fire and MODIS post-fire images, a U-Net for segmentation, and a multitask DDPM for simultaneous super-resolution and segmentation. Our experiments show that learning both tasks enhances performance in each, thus enabling daily high-resolution wildfire monitoring. The main objective of FireSR is to stimulate further research and innovation in achieving daily high-resolution wildfire monitoring, thereby supporting effective wildfire response and management. The dataset is openly accessible at <a href="https://drive.google.com/drive/folders/YOUR_DATASET_LINK" target="_blank">this link</a>.
+              The increasing frequency and severity of wildfires, driven by climate change, necessitate high-resolution daily monitoring. While Terra/Aqua Moderate Resolution Imaging Spectroradiometer (MODIS) provides daily global coverage at a coarse spatial resolution of 500 meters in its short-wave infrared band, Sentinel-2 MultiSpectral Imager (MSI) offers higher resolution at 20 meters but with a five-day revisit time. Addressing the gap between the need for high spatial and temporal resolution monitoring and the limitations of existing satellite data, we introduce FireSR, a dataset that includes images over 764 wildfire events in Canada from 2017 to 2023 larger than 2000 hectares. The dataset comprises pre- and post-fire Sentinel-2 images, post-fire MODIS images, and National Burned Area Composite (NBAC) polygons. We demonstrate the capability of FireSR through three benchmark models: a conditional Denoising Diffusion Probabilistic Model (DDPM) for super-resolution (SR) of Sentinel-2 MSI pre-fire and Terra/Aqua MODIS post-fire images, a U-Net for burned area segmentation, and a multi-task DDPM for simultaneous super-resolution and segmentation. Our experiments show that the DDPMs are able to generate high-resolution images that are similar to Sentinel-2 MSI post-fire images. Additionally, learning both tasks enhances performance in segmentation, thus enabling high-resolution burned area mapping. By publishing this dataset and demonstrating the potential of deep learning methodologies, particularly diffusion models, we aim to stimulate the development of advanced methods for wildfire monitoring, thereby supporting more effective wildfire response and management. The dataset and code are available at <a href="https://zenodo.org/doi/10.5281/zenodo.11383985" target="_blank">this link</a>.
             </p>
           </div>
         </div>
